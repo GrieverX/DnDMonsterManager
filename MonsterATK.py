@@ -1,5 +1,8 @@
 
-from Tkinter import *
+try:
+    from Tkinter import *
+except:
+    from tkinter import *
 from random import randrange
 
 

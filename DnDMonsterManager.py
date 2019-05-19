@@ -1,6 +1,10 @@
+try:
+    from Tkinter import *
+    import tkMessageBox
+except:
+    from tkinter import *
+    from tkinter import messagebox
 
-from Tkinter import *
-import tkMessageBox
 import MonsterATK
 
 iniziativa_list = []
@@ -9,8 +13,12 @@ testo = ""
 
 def add_initiative():
     if nome_iniz.get() == "":
-        tkMessageBox.showinfo("Error", "Inserisci un nome")
-        return 0
+        try:
+            tkMessageBox.showinfo("Error", "Inserisci un nome")
+            return 0
+        except:
+            messagebox.showinfo("Error", "Inserisci un nome")
+            return 0
     global iniziativa_list
     diz = {}
     diz['nome'] = nome_iniz.get()
